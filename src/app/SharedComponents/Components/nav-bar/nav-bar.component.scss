@@ -1,0 +1,8 @@
+
+.navbar-light .navbar-nav .nav-link {
+  color: #0099ff;
+}
+
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .nav-link.active {
+  color: black;
+}

@@ -1,1 +1,95 @@
-<p>home works!</p>
+<div class="animate__animated animate__fadeInBottomLeft">
+  <mat-card class="mb-3">
+    <div class="row">
+      <div class="col-md-1">
+        <button pButton label="Clear" class="p-button-outlined mt-2" icon="pi pi-filter-slash"
+                (click)="dt1.clear()"></button>
+      </div>
+      <div class="col-md-11">
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Search keyword</mat-label>
+          <input type="text" matInput (input)="dt1.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword">
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-card>
+  <mat-card>
+    <p-table #dt1 [value]="employeesList.employees" dataKey="id"
+             [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]"
+             styleClass="p-datatable-gridlines"
+             [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+             [globalFilterFields]="['profile.name','email','profile.address']">
+      <ng-template pTemplate="caption">
+
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th>
+            <div class="flex justify-content-center align-items-center">
+              Name
+              <p-columnFilter type="text" field="profile.name" display="menu"></p-columnFilter>
+            </div>
+          </th>
+          <th>
+            <div class="flex justify-content-center align-items-center">
+              Email
+              <p-columnFilter type="text" field="email" display="menu"></p-columnFilter>
+            </div>
+          </th>
+          <th>
+            <div class="flex justify-content-center align-items-center">
+              Address
+              <p-columnFilter type="text" field="profile.address" display="menu"></p-columnFilter>
+            </div>
+          </th>
+          <th>
+            <div class="flex justify-content-center align-items-center">
+              Start Date
+            </div>
+          </th>
+          <th>
+            <div class="flex justify-content-center align-items-center">
+              Performance Index
+              <p-columnFilter type="text" field="performance_index" display="menu"></p-columnFilter>
+            </div>
+          </th>
+          <th>
+            <div class="flex justify-content-center align-items-center">
+              About
+            </div>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-employee>
+        <tr>
+          <td>
+            <img [src]="employee.profile.avatar"
+                 class="avatar">
+            <span class="image-text">{{employee.profile.name}}</span>
+          </td>
+          <td>
+            {{employee.email}}
+          </td>
+          <td>
+            {{employee.profile.address}}
+          </td>
+          <td>
+            {{employee.start_date | date}}
+          </td>
+          <td>
+            {{employee.performance_index}}
+          </td>
+          <td style="width: 30%">
+            {{employee.profile.about}}
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="6">No Employee found.</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </mat-card>
+</div>
+

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiURL: 'https://fe-task.getsandbox.com'
+  apiURL: 'https://fe-task.getsandbox.com/'
 };

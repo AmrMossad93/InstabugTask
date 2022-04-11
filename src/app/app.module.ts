@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgxSpinnerModule} from "ngx-spinner";
 import {SharedComponentsModule} from "./SharedComponents/shared-components.module";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {SharedComponentsModule} from "./SharedComponents/shared-components.modul
     AppRoutingModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+    HttpClientModule
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -18,7 +18,7 @@
              [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]"
              styleClass="p-datatable-gridlines"
              [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-             [globalFilterFields]="['profile.name','email','profile.address']">
+             [globalFilterFields]="['profile.name','employee.profile.about','profile.address']">
       <ng-template pTemplate="header">
         <tr>
           <th>

@@ -6,7 +6,7 @@ import {MultiSelectModule} from 'primeng/multiselect';
 import {DropdownModule} from 'primeng/dropdown';
 import {SliderModule} from 'primeng/slider';
 import {ProgressBarModule} from 'primeng/progressbar';
-
+import {ChartModule} from 'primeng/chart';
 const primeNgModule = [
   TableModule,
   ButtonModule,
@@ -14,7 +14,8 @@ const primeNgModule = [
   MultiSelectModule,
   DropdownModule,
   SliderModule,
-  ProgressBarModule
+  ProgressBarModule,
+  ChartModule
 ];
 
 @NgModule({

@@ -8,6 +8,7 @@ import {NgxSpinnerModule} from "ngx-spinner";
 import {SharedComponentsModule} from "./SharedComponents/shared-components.module";
 import {HttpClientModule} from "@angular/common/http";
 import {httpInterceptorProviders} from "./Interceptors";
+import {NgxEchartsModule} from "ngx-echarts";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,10 @@ import {httpInterceptorProviders} from "./Interceptors";
     BrowserAnimationsModule,
     NgxSpinnerModule,
     SharedComponentsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts')
+    })
   ],
   providers: [httpInterceptorProviders],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

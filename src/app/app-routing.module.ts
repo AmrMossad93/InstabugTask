@@ -11,10 +11,15 @@ const routes: Routes = [
     loadChildren: () => import('./Pages/Team-Performance/team-performance.module').then(module => module.TeamPerformanceModule)
   },
   {
+    path: 'error',
+    loadChildren: () => import('./Pages/Error/error.module').then(module => module.ErrorModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  }
+  },
+  {path: '**', redirectTo: '/error/404'}
 ];
 
 @NgModule({
